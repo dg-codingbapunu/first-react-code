@@ -1,18 +1,18 @@
-import Random from "./Random";
+import TodoItem2 from "./component/TodoItem2";
+import TodoItem1 from "./component/TodoItem1";
+import AddTodo from "./component/Add todo";
+import AppName from "./component/AppName";
+import "./App.css";
 function App() {
   return (
-    <div>
-      <h1>this is best course on react</h1>
-      <h3>hyy im yes why this is </h3>
-      <button>click me</button>
-      <Random></Random>
-      <Random></Random>
-      <Random></Random>
-      <Random></Random>
-      <Random></Random>
-      <Random></Random>
-      <Random></Random>
-    </div>
+    <center class="todo-container">
+      <AppName></AppName>
+      <AddTodo></AddTodo>
+      <div className="items-container">
+        <TodoItem1></TodoItem1>
+        <TodoItem2></TodoItem2>
+      </div>
+    </center>
   );
 }
 export default App;
