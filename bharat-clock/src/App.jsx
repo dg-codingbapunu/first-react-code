@@ -4,11 +4,11 @@ import CurrentTime from "./components/CurrentTime";
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
-    <div>
+    <center>
       <Heading></Heading>
       <Slogan></Slogan>
       <CurrentTime></CurrentTime>
-    </div>
+    </center>
   );
 }
 export default App;
