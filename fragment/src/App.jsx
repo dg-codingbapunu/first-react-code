@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      <h1 className="food-heading">Healthy Food</h1>
+      <h1 classNameName="food-heading">Healthy Food</h1>
       <ErrorMessage items={foodItem}></ErrorMessage>
       <FoodItems items={foodItem}></FoodItems>
     </>

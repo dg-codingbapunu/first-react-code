@@ -1,7 +1,7 @@
 import Item from "./Item";
 function FoodItems({ items }) {
   return (
-    <ul className="list-group">
+    <ul classNameName="list-group">
       {items.map((item) => (
         <Item key={item} foodItem={item}></Item>
       ))}

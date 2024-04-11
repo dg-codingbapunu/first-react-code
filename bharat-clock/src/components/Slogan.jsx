@@ -1,6 +1,6 @@
 function Slogan() {
   return (
-    <p className="lead">
+    <p classNameName="lead">
       This is the clock that shows the time in Bharat at all times
     </p>
   );

@@ -1,15 +1,7 @@
-h1 {
-  font-weight: 700;
-  font-size: 46px;
-  margin: 10px;
-  margin-bottom: 20px;
-}
 input {
   width: 100%;
 }
-.items-container {
-  text-align: left;
-}
+
 .kg-button {
   padding: 2px 8px;
   min-width: 85px;
