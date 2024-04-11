@@ -1,4 +1,10 @@
-function Item(items) {
-  return <li className="list-group-item">{items.foodItem}</li>;
+import styles from "./Item.module.css";
+
+function Item({ foodItem }) {
+  return (
+    <li className={`${styles["kg-item"]} `}>
+      <span className={`${styles["kg-span"]}`}>{foodItem}</span>
+    </li>
+  );
 }
 export default Item;
