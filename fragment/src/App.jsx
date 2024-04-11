@@ -14,6 +14,7 @@ function App() {
     "Curd",
     "ghee",
     "egg",
+    "chicken",
   ];
 
   return (
