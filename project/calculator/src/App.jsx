@@ -1,4 +1,8 @@
 function App() {
-  return <h1>CALCULATOR</h1>;
+  return (
+    <center>
+      <h1>CALCULATOR</h1>
+    </center>
+  );
 }
 export default App;
