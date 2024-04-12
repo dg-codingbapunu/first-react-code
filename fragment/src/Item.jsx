@@ -6,7 +6,7 @@ function Item({ foodItem }) {
       <span className={`${styles["kg-span"]}`}>{foodItem}</span>
       <button
         className={`${styles.button} btn btn-info`}
-        onClick={() => console.log(`${foodItem} being brought`)}
+        onClick={() => alert(`${foodItem} being brought`)}
       >
         Buy
       </button>
