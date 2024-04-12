@@ -17,6 +17,8 @@ function App() {
     "almonds",
     "fruits",
     "cashew",
+    "nuts",
+    "butter",
   ];
 
   return (
