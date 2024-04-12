@@ -6,3 +6,6 @@
   color: rgb(228, 117, 32);
   cursor: pointer;
 }
+.button {
+  float: right;
+}
