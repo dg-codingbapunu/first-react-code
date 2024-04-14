@@ -7,7 +7,10 @@ function App() {
   const [calVal, setcalVal] = useState("");
   const onButtonClick = (buttonText) => {
     if (buttonText === "C") {
+      setcalVal("");
     } else if (buttonText === "=") {
+      const result = eval(calVal);
+      setcalVal(result);
     } else {
       const newDisplayValue = calVal + buttonText;
       setcalVal(newDisplayValue);

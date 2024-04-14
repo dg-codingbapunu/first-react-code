@@ -14,6 +14,7 @@ let ButtonContainer = ({ onButtonClick }) => {
     "7",
     "8",
     "/",
+    "=",
     "9",
     "0",
     ".",
