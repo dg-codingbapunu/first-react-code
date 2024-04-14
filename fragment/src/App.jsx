@@ -8,20 +8,11 @@ import { useState } from "react";
 
 function App() {
   // let foodItem = [];
-  let foodItem = [
-    "Dal",
-    "Sabji",
-    "Milk",
-    "Roti",
-    "honey",
-    "Curd",
-    "ghee",
-    "almonds",
-    "fruits",
-  ];
-  let textStateArr = useState("food item enter by user");
+
+  let textStateArr = useState();
   let textToShow = textStateArr[0];
   let setTextState = textStateArr[1];
+  let [foodItem, setFoodItem] = useState(["honey", "Curd", "ghee"]);
 
   const handleOnChange = (event) => {
     console.log(event.target.value);
@@ -35,7 +26,7 @@ function App() {
 
         <ErrorMessage items={foodItem}></ErrorMessage>
         <FoodInput handleOnChange={handleOnChange}></FoodInput>
-        <p>{textToShow}</p>
+
         <FoodItems items={foodItem}></FoodItems>
       </Container>
       <Container>

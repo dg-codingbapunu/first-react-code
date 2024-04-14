@@ -5,7 +5,7 @@ let FoodInput = ({ handleOnChange }) => {
       type="text"
       placeholder="Enter Food Item here"
       className={styles.Input}
-      onChange={handleOnChange}
+      onKeyDown={handleOnChange}
     ></input>
   );
 };
