@@ -36,12 +36,12 @@ function App() {
         <p>{textToShow}</p>
         <FoodItems items={foodItem}></FoodItems>
       </Container>
-      {/* <Container>
+      <Container>
         <p>
           Above is the list of healthy food that are good for your health and
           being
         </p>
-      </Container> */}
+      </Container>
     </>
   );
 }
