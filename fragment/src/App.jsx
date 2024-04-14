@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Container from "./Container";
 import FoodInput from "./FoodInput";
+import { useState } from "react";
 
 function App() {
   // let foodItem = [];
@@ -18,12 +19,13 @@ function App() {
     "almonds",
     "fruits",
   ];
-
-  let textToShow = "food item enter by user";
+  let textStateArr = useState("food item enter by user");
+  let textToShow = textStateArr[0];
+  let setTextState = textStateArr[1];
 
   const handleOnChange = (event) => {
     console.log(event.target.value);
-    textToShow = event.target.value;
+    setTextState(event.target.value);
   };
 
   return (
