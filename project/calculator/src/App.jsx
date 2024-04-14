@@ -1,13 +1,17 @@
 import Display from "./component/Display";
 import ButtonContainer from "./component/ButtonContainer";
 import styles from "./App.module.css";
+import { useState } from "react";
 
 function App() {
+  const [calVal, setcalVal] = useState("");
+  const onButtonClick = (buttonText) => console.log(buttonText);
+
   return (
     <center>
       <div className={styles.calculator}>
-        <Display></Display>
-        <ButtonContainer></ButtonContainer>
+        <Display calVal={calVal}></Display>
+        <ButtonContainer onButtonClick={onButtonClick}></ButtonContainer>
       </div>
     </center>
   );
