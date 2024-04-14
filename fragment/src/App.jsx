@@ -7,17 +7,14 @@ import FoodInput from "./FoodInput";
 import { useState } from "react";
 
 function App() {
-  // let foodItem = [];
-
-  let textStateArr = useState();
-  let textToShow = textStateArr[0];
-  let setTextState = textStateArr[1];
-  let [foodItem, setFoodItem] = useState(["honey", "Curd", "ghee"]);
+  let [foodItem, setFoodItem] = useState([]);
 
   const onKeyDown = (event) => {
-    if (event.key === "enter") {
+    if (event.key === "Enter") {
       let newFoodItem = event.target.value;
-      console.log("food value is" + newFoodItem);
+      event.target.value = "";
+      let newItems = [...foodItem, newFoodItem];
+      setFoodItem(newItems);
     }
   };
 
@@ -26,8 +23,8 @@ function App() {
       <Container>
         <h1 className="food-heading">Healthy Food</h1>
 
-        <ErrorMessage items={foodItem}></ErrorMessage>
         <FoodInput onKeyDown={onKeyDown}></FoodInput>
+        <ErrorMessage items={foodItem}></ErrorMessage>
 
         <FoodItems items={foodItem}></FoodItems>
       </Container>
