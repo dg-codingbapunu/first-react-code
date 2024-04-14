@@ -5,8 +5,14 @@ import { useState } from "react";
 
 function App() {
   const [calVal, setcalVal] = useState("");
-  const onButtonClick = (buttonText) => console.log(buttonText);
-
+  const onButtonClick = (buttonText) => {
+    if (buttonText === "C") {
+    } else if (buttonText === "=") {
+    } else {
+      const newDisplayValue = calVal + buttonText;
+      setcalVal(newDisplayValue);
+    }
+  };
   return (
     <center>
       <div className={styles.calculator}>
