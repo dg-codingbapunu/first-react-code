@@ -19,9 +19,6 @@ function App() {
       let newFoodItem = event.target.value;
       console.log("food value is" + newFoodItem);
     }
-
-    console.log(event.target.value);
-    setTextState(event.target.value);
   };
 
   return (
