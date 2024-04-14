@@ -14,7 +14,12 @@ function App() {
   let setTextState = textStateArr[1];
   let [foodItem, setFoodItem] = useState(["honey", "Curd", "ghee"]);
 
-  const handleOnChange = (event) => {
+  const onKeyDown = (event) => {
+    if (event.key === "enter") {
+      let newFoodItem = event.target.value;
+      console.log("food value is" + newFoodItem);
+    }
+
     console.log(event.target.value);
     setTextState(event.target.value);
   };
@@ -25,7 +30,7 @@ function App() {
         <h1 className="food-heading">Healthy Food</h1>
 
         <ErrorMessage items={foodItem}></ErrorMessage>
-        <FoodInput handleOnChange={handleOnChange}></FoodInput>
+        <FoodInput onKeyDown={onKeyDown}></FoodInput>
 
         <FoodItems items={foodItem}></FoodItems>
       </Container>
