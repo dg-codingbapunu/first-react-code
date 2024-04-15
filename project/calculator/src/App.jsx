@@ -25,4 +25,5 @@ function App() {
     </center>
   );
 }
+
 export default App;
