@@ -7,14 +7,20 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [todoItems, setTodoitems] = useState([]);
+  const [todoItems, setTodoItems] = useState([]);
+
   const handleNewItem = (itemName, itemDueDate) => {
-    console.log(`new item added:${itemName} date:${itemDueDate}`);
+    console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
     const newTodoItems = [
       ...todoItems,
       { name: itemName, dueDate: itemDueDate },
     ];
-    setTodoitems(newTodoItems);
+    setTodoItems(newTodoItems);
+  };
+
+  const handleDeleteItem = (todoItemName) => {
+    const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
+    setTodoItems(newTodoItems);
   };
 
   return (
@@ -23,7 +29,10 @@ function App() {
         <AppName></AppName>
         <AddTodo onNewItem={handleNewItem}></AddTodo>
         {todoItems === 0 && <Welcome></Welcome>}
-        <TodoItems todoItems={todoItems}></TodoItems>
+        <TodoItems
+          todoItems={todoItems}
+          onDeleteClick={handleDeleteItem}
+        ></TodoItems>
       </div>
     </center>
   );
