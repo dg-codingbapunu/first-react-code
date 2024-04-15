@@ -3,8 +3,16 @@ import { useState } from "react";
 function AddTodo({ onNewItem }) {
   const [todoName, setTodoname] = useState();
   const [dueDate, setDueDate] = useState();
-  const handleNameChange = (event) => {};
-  const handleDateChange = (event) => {};
+  const handleNameChange = (event) => {
+    setTodoname(event.target.value);
+  };
+  const handleDateChange = (event) => {
+    setDueDate(event.target.value);
+  };
+  const handleButtonClicked = () => {
+onNewItem(todoName,dueDate);
+  }
+
 
   return (
     <div className="container text-center">
@@ -23,7 +31,7 @@ function AddTodo({ onNewItem }) {
           <button
             type="button"
             className="btn btn-success kg-button"
-            onClick={() => onNewItem("a", "b")}
+            onClick={handleButtonClicked}
           >
             Add
           </button>
