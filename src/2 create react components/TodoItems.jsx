@@ -3,7 +3,7 @@ import styles from "./TodoItems.module.css";
 
 const TodoItems = ({ todoItems }) => {
   return (
-    <div classNameName={styles.itemsContainer}>
+    <div className={styles.itemsContainer}>
       {todoItems.map((item) => (
         <TodoItem todoDate={item.dueDate} todoName={item.name}></TodoItem>
       ))}
