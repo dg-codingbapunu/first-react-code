@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { IoIosAdd } from "react-icons/io";
+
 function AddTodo({ onNewItem }) {
   const [todoName, setTodoname] = useState();
   const [dueDate, setDueDate] = useState();
@@ -35,7 +37,7 @@ function AddTodo({ onNewItem }) {
             className="btn btn-success kg-button"
             onClick={handleButtonClicked}
           >
-            Add
+            <IoIosAdd />
           </button>
         </div>
       </div>
