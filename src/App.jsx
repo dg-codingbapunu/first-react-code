@@ -1,9 +1,8 @@
 import AddTodo from "./component/Add todo";
 import AppName from "./component/AppName";
 
-import TodoItems from "./2 create react components/TodoItems";
-import Welcome from "./component/Welcome";
-import "./App.css";
+import TodoItems from "./2 create react components";
+
 import { useState } from "react";
 
 function App() {
@@ -28,7 +27,7 @@ function App() {
       <div className="todo-container">
         <AppName></AppName>
         <AddTodo onNewItem={handleNewItem}></AddTodo>
-        {todoItems === 0 && <Welcome></Welcome>}
+        {todoItems === 0 && <Welcomemessage></Welcomemessage>}
         <TodoItems
           todoItems={todoItems}
           onDeleteClick={handleDeleteItem}
