@@ -1,5 +1,6 @@
 import AddTodo from "./component/Add todo";
 import AppName from "./component/AppName";
+import { TodoItemsContext } from "./component/store/todo-items ";
 
 import TodoItems from "./2 create react components/TodoItems";
 import WelcomeMessage from "./component/WelcomeMessage";
@@ -23,15 +24,17 @@ function App() {
   };
 
   return (
-    <center className="todo-container">
-      <AppName></AppName>
-      <AddTodo onNewItem={handleNewItem}></AddTodo>
-      {todoItems === 0 && <WelcomeMessage></WelcomeMessage>}
-      <TodoItems
-        todoItems={todoItems}
-        onDeleteClick={handleDeleteItem}
-      ></TodoItems>
-    </center>
+    <TodoItemsContext.Provider value={[]}>
+      <center className="todo-container">
+        <AppName></AppName>
+        <AddTodo onNewItem={handleNewItem}></AddTodo>
+        {todoItems === 0 && <WelcomeMessage></WelcomeMessage>}
+        <TodoItems
+          todoItems={todoItems}
+          onDeleteClick={handleDeleteItem}
+        ></TodoItems>
+      </center>
+    </TodoItemsContext.Provider>
   );
 }
 export default App;
