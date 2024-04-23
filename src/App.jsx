@@ -4,10 +4,13 @@ import { TodoItemsContext } from "./component/store/todo-items ";
 
 import TodoItems from "./2 create react components/TodoItems";
 import WelcomeMessage from "./component/WelcomeMessage";
-import { useState } from "react";
+import { useState, useReducer } from "react";
+import { GrAction } from "react-icons/gr";
+const todoItemsReducer = (action) => {};
 
 function App() {
   const [todoItems, setTodoItems] = useState([]);
+  const [newTodoItems, dispatchTodoItems] = useReducer();
 
   const handleNewItem = (itemName, itemDueDate) => {
     console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
