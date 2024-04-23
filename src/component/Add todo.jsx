@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { IoIosAdd } from "react-icons/io";
 
 function AddTodo({ onNewItem }) {
   const [todoName, setTodoname] = useState();
   const [dueDate, setDueDate] = useState();
+  let noOfClicks = useRef(0);
   const handleNameChange = (event) => {
     setTodoname(event.target.value);
+    noOfClicks.current += 1;
   };
   const handleDateChange = (event) => {
     setDueDate(event.target.value);
+    console.log(`no of update${noOfClicks.current}`);
   };
   const handleButtonClicked = () => {
     onNewItem(todoName, dueDate);
