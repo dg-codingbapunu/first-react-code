@@ -23,16 +23,14 @@ function App() {
   };
 
   return (
-    <center>
-      <div className="todo-container">
-        <AppName></AppName>
-        <AddTodo onNewItem={handleNewItem}></AddTodo>
-        {todoItems === 0 && <WelcomeMessage></WelcomeMessage>}
-        <TodoItems
-          todoItems={todoItems}
-          onDeleteClick={handleDeleteItem}
-        ></TodoItems>
-      </div>
+    <center className="todo-container">
+      <AppName></AppName>
+      <AddTodo onNewItem={handleNewItem}></AddTodo>
+      {todoItems === 0 && <WelcomeMessage></WelcomeMessage>}
+      <TodoItems
+        todoItems={todoItems}
+        onDeleteClick={handleDeleteItem}
+      ></TodoItems>
     </center>
   );
 }
