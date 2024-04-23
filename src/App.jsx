@@ -22,9 +22,10 @@ function App() {
     const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
     setTodoItems(newTodoItems);
   };
+  const defaultItems = [{ name: "buy ghee", dueDate: "today" }];
 
   return (
-    <TodoItemsContext.Provider value={[]}>
+    <TodoItemsContext.Provider value={defaultItems}>
       <center className="todo-container">
         <AppName></AppName>
         <AddTodo onNewItem={handleNewItem}></AddTodo>
