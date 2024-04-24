@@ -8,36 +8,29 @@ import { useState, useReducer } from "react";
 import { GrAction } from "react-icons/gr";
 const todoItemsReducer = (action) => {};
 
-function App() {
-  const [todoItems, setTodoItems] = useState([]);
-  const [newTodoItems, dispatchTodoItems] = useReducer();
+const handleNewItem = (itemName, itemDueDate) => {
+  console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
+  const newTodoItems = [...todoItems, { name: itemName, dueDate: itemDueDate }];
+  setTodoItems(newTodoItems);
+};
 
-  const handleNewItem = (itemName, itemDueDate) => {
-    console.log(`New Item Added: ${itemName} Date:${itemDueDate}`);
-    const newTodoItems = [
-      ...todoItems,
-      { name: itemName, dueDate: itemDueDate },
-    ];
-    setTodoItems(newTodoItems);
-  };
+const handleDeleteItem = (todoItemName) => {
+  const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
+  setTodoItems(newTodoItems);
+};
 
-  const handleDeleteItem = (todoItemName) => {
-    const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
-    setTodoItems(newTodoItems);
-  };
+return (
+  <TodoItemsContext.Provider value={todoItems}>
+    <center className="todo-container">
+      <AppName></AppName>
+      <AddTodo onNewItem={handleNewItem}></AddTodo>
+      {todoItems === 0 && <WelcomeMessage></WelcomeMessage>}
+      <TodoItems
+        todoItems={todoItems}
+        onDeleteClick={handleDeleteItem}
+      ></TodoItems>
+    </center>
+  </TodoItemsContext.Provider>
+);
 
-  return (
-    <TodoItemsContext.Provider value={todoItems}>
-      <center className="todo-container">
-        <AppName></AppName>
-        <AddTodo onNewItem={handleNewItem}></AddTodo>
-        {todoItems === 0 && <WelcomeMessage></WelcomeMessage>}
-        <TodoItems
-          todoItems={todoItems}
-          onDeleteClick={handleDeleteItem}
-        ></TodoItems>
-      </center>
-    </TodoItemsContext.Provider>
-  );
-}
 export default App;
