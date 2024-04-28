@@ -3,3 +3,8 @@
   color: blue;
   text-align: center;
 }
+@media only screen and (max-width: 600px) {
+  .food-heading {
+    font-size: 20px; /* Adjust as needed for your design */
+  }
+}

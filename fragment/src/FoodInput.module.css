@@ -3,3 +3,18 @@ Input {
   padding: 5px;
   margin: 10px 0px;
 }
+/* Responsive adjustments for mobile devices */
+@media only screen and (max-width: 768px) {
+  Input {
+    padding: 8px; /* Adjust padding for better touch interaction */
+    margin: 8px 0; /* Adjust margin for spacing */
+  }
+}
+
+/* Additional adjustments for smaller mobile devices */
+@media only screen and (max-width: 480px) {
+  Input {
+    padding: 6px; /* Further adjust padding for smaller screens */
+    margin: 6px 0; /* Further adjust margin for smaller screens */
+  }
+}

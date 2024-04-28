@@ -9,3 +9,11 @@
 .button {
   float: right;
 }
+
+@media only screen and (max-width: 600px) {
+  .button {
+    float: none;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
